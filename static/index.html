@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpectraQual</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300ff66' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8V4m0 0h4m-4 0l5 5M20 8V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5M20 16v4m0 0h-4m4 0l-5-5'%3E%3C/path%3E%3Ccircle cx='12' cy='12' r='2'%3E%3C/circle%3E%3C/svg%3E">
+    <!-- Modern Tech Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-animated">
+        <div class="particles" id="particles-container"></div>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Application Top Nav -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28">
+                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                <rect x="9" y="9" width="6" height="6"></rect>
+                <line x1="9" y1="1" x2="9" y2="4"></line>
+                <line x1="15" y1="1" x2="15" y2="4"></line>
+                <line x1="9" y1="20" x2="9" y2="23"></line>
+                <line x1="15" y1="20" x2="15" y2="23"></line>
+                <line x1="20" y1="9" x2="23" y2="9"></line>
+                <line x1="20" y1="14" x2="23" y2="14"></line>
+                <line x1="1" y1="9" x2="4" y2="9"></line>
+                <line x1="1" y1="14" x2="4" y2="14"></line>
+            </svg>
+            <span class="logo-text">Neural<strong>PCB</strong></span>
+        </div>
+        <div class="nav-links">
+            <button id="awarenessToggle" class="toggle-btn">
+                <span class="toggle-icon">🌍</span> 
+                <span class="toggle-text">Awareness Mode</span>
+            </button>
+            <a href="#impact" class="nav-link">Sustainability Impact</a>
+            <a href="#app-workspace" class="nav-btn">Start Scanning</a>
+        </div>
+    </nav>
+
+    <div class="app-container">
+        <!-- Hero Section -->
+        <header class="hero-section scroll-fade-in">
+            <div class="brand-tagline" style="font-size: 1.2rem; color: var(--cyan); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; font-family: var(--font-mono);">
+                SpectraQual : Fusion Vision For Flawless Fabrication
+            </div>
+            <h1 class="glitch-text" data-text="AI-Powered PCB Defect Detection">AI-Powered PCB Defect Detection</h1>
+            <p class="hero-subtitle">Smart Inspection = Sustainable Manufacturing</p>
+        </header>
+
+        <!-- Real-World Impact Section -->
+        <section class="story-section scroll-fade-in" id="impact">
+            <div class="story-header text-center">
+                <h2 class="section-title text-cyan">Real-World Impact</h2>
+                <p class="section-subtitle">Millions of PCBs are wasted due to undetected defects. AI prevents unnecessary electronic waste.
+                </p>
+            </div>
+            
+            <div class="image-showcase">
+                <div class="impact-card glass-panel interactive-card" data-story="ewaste">
+                    <div class="img-skeleton">
+                        <img src="/static/images/ewaste.jpg" alt="Electronic Waste" loading="lazy" class="img-lazy" onload="this.classList.add('loaded')" onerror="this.onerror=null; this.src='/static/images/fallback.jpg'; this.classList.add('loaded');">
+                    </div>
+                    <div class="card-overlay">
+                        <h3><strong>E-Waste Crisis</strong></h3>
+                        <p>Millions of PCBs are discarded annually, polluting our environment.</p>
+                    </div>
+                    <div class="explore-hint">Click to Explore ➔</div>
+                </div>
+                
+                <div class="impact-card glass-panel interactive-card" data-story="sustainable">
+                    <div class="img-skeleton">
+                        <img src="/static/images/pcb_clean.jpg" alt="Clean Manufacturing" loading="lazy" class="img-lazy" onload="this.classList.add('loaded')" onerror="this.onerror=null; this.src='/static/images/fallback.jpg'; this.classList.add('loaded');">
+                    </div>
+                    <div class="card-overlay">
+                        <h3><strong>Sustainable Manufacturing</strong></h3>
+                        <p>AI-driven inspection ensures precision and stops waste at the source.</p>
+                    </div>
+                    <div class="explore-hint">Click to Explore ➔</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Cinematic Comparison Section -->
+        <section class="cinematic-comparison-section scroll-fade-in relative">
+            
+            <!-- Transform Button (Action) -->
+            <div class="transform-action-wrapper text-center mb-3">
+                <button id="transformActionBtn" class="btn-neon cinematic-btn">
+                    <span class="btn-text">TRANSFORM: WASTE TO INTELLIGENCE</span>
+                </button>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="slider-container glass-panel" id="comparisonSlider">
+                
+                <!-- Left Side: Without AI (Base Image) -->
+                <div class="slider-side slider-left">
+                    <img src="/static/images/factory_pollution.jpg" alt="Industrial Pollution Without AI" loading="lazy">
+                    <div class="side-overlay left-overlay">
+                        <div class="hover-content">
+                            <span class="floating-alert text-red">⚠ Material Waste ↑</span>
+                            <span class="floating-alert text-red">⚠ Production Loss ↑</span>
+                            <span class="floating-alert text-red">⚠ E-Waste ↑</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: With AI (Clipped Top Image) -->
+                <div class="slider-side slider-right" id="sliderRight">
+                    <img src="/static/images/pcb_clean.jpg" alt="Clean PCB With AI" loading="lazy">
+                    <div class="side-overlay right-overlay">
+                        <div class="hover-content">
+                            <span class="floating-alert text-green">✓ Waste Reduced</span>
+                            <span class="floating-alert text-green">✓ Efficiency ↑</span>
+                            <span class="floating-alert text-green">✓ Sustainable Production</span>
+                        </div>
+                    </div>
+                    <!-- AI Scanning Beam -->
+                    <div class="ai-scanning-beam"></div>
+                </div>
+
+                <!-- Drag Handle -->
+                <div class="slider-handle" id="sliderHandle">
+                    <div class="slider-handle-line"></div>
+                    <div class="slider-handle-button">
+                        <span style="font-size: 1.2rem; display: flex; align-items: center; justify-content: center; height: 100%; color: white;">&lt;&gt;</span>
+                    </div>
+                </div>
+
+                <!-- Click zones for modals -->
+                <div class="click-zone click-zone-left interactive-card" data-story="ewaste" title="Click to view detailed impact"></div>
+                <div class="click-zone click-zone-right interactive-card" data-story="sustainable" title="Click to view sustainable solution"></div>
+
+                <!-- Transform Overlay Text -->
+                <div class="transform-overlay-text hidden" id="transformOverlayText">
+                    <h2>From Loss → Sustainability</h2>
+                </div>
+            </div>
+
+            <!-- Bottom Takeaway Strip -->
+            <div class="takeaway-strip glass-panel mt-3">
+                <span class="takeaway-title">What this means for you:</span>
+                <div class="takeaway-points">
+                    <div class="takeaway-point point-red">
+                        <span class="takeaway-icon">❌</span>
+                        <strong>Without AI:</strong> Products wasted
+                    </div>
+                    <div class="takeaway-arrow">➔</div>
+                    <div class="takeaway-point point-green">
+                        <span class="takeaway-icon">✅</span>
+                        <strong>With AI:</strong> Products saved
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Main Tool (Solution) -->
+        <section class="tool-section scroll-fade-in" id="app-workspace">
+            <div class="section-header text-center">
+                <h2 class="section-title text-blue">Scan Your PCB</h2>
+                <p>Upload a high-resolution image to run the inference engine.</p>
+            </div>
+            
+            <main class="workspace-centered">
+                <section class="engine-panel glass-panel">
+                    <div class="panel-header">
+                        <h2><span class="icon-scan"></span> Inspection Engine</h2>
+                    </div>
+                    
+                    <div class="upload-container" id="uploadPanel">
+                        <div class="upload-zone" id="dropZone">
+                            <div class="upload-graphics">
+                                <svg class="glow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                            <h3>Drag & Drop PCB Scan</h3>
+                            <p>Supports high-resolution JPEG, PNG</p>
+                            <input type="file" id="fileInput" accept="image/jpeg, image/png, image/jpg" hidden>
+                            <button class="btn-neon" onclick="document.getElementById('fileInput').click()">
+                                <span>BROWSE FILES</span>
+                            </button>
+                        </div>
+    
+                        <div class="preview-zone hidden" id="previewZone">
+                            <div class="image-wrapper">
+                                <img id="imagePreview" src="" alt="PCB Preview">
+                                <div class="scanning-laser hidden" id="scanningLaser"></div>
+                            </div>
+                            
+                            <div class="action-bar">
+                                <button class="btn-ghost" id="resetBtn">Cancel</button>
+                                <button class="btn-neon action-run" id="analyzeBtn">
+                                    <span class="btn-text">INITIALIZE SCAN</span>
+                                    <span class="loader hidden" id="btnLoader"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Results Interface -->
+                    <div class="results-container hidden" id="resultsPanel">
+                        <!-- Split Layout for Results -->
+                        <div class="results-layout">
+                            <div class="results-image-wrapper">
+                                <img id="annotatedImage" src="" alt="Analyzed PCB">
+                            </div>
+                            
+                            <div class="results-data">
+                                <div class="status-banner" id="statusBanner">
+                                    <h2 id="statusTitle">NO DEFECT</h2>
+                                    <span id="statusSubtitle">PCB is safe.</span>
+                                </div>
+                                
+                                <!-- Defect Summary Panel -->
+                                <div class="summary-panel" id="summaryPanel">
+                                    <h3>Detected Issues:</h3>
+                                    <div class="defect-breakdown" id="defectBreakdown">
+                                        <!-- Populated dynamically -->
+                                    </div>
+                                    <div class="overall-status mt-3" id="overallStatus">
+                                        <strong id="badgeLabel">Overall Status:</strong> 
+                                        <span class="status-badge" id="badgeText">✅ Safe</span>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn-neon btn-full" id="newScanBtn">
+                                    <span>RUN NEW INSPECTION</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </section>
+
+        <!-- SDG Targets Alignment Section -->
+        <section class="sdg-section scroll-fade-in glass-panel">
+            <div class="glow-overlay sdg-glow"></div>
+            
+            <div class="section-header text-center" style="margin-bottom: 3rem;">
+                <h2 class="section-title text-green">Global Goals Alignment</h2>
+                <p>Driving Sustainable Development through AI-powered Defect Detection</p>
+            </div>
+
+            <div class="sdg-grid">
+                <!-- Target 12.b / SAP120B -->
+                <div class="sdg-target-card sdg-12 glass-panel">
+                    <div class="sdg-card-header">
+                        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg" alt="SDG 12 Responsible Consumption" class="sdg-icon-small">
+                        <div class="sdg-badge badge-12">Target 12.b (SAP120B)</div>
+                    </div>
+                    <div class="sdg-card-body">
+                        <h3>Sustainable Tourism</h3>
+                        <p>Reliable, defect-free PCBs ensure the longevity of electronics used in smart eco-tourism infrastructure, significantly reducing e-waste in vulnerable tourist destinations.</p>
+                    </div>
+                </div>
+
+                <!-- Target 13.2 / SAP1302 -->
+                <div class="sdg-target-card sdg-13 glass-panel">
+                    <div class="sdg-card-header">
+                        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg" alt="SDG 13 Climate Action" class="sdg-icon-small">
+                        <div class="sdg-badge badge-13">Target 13.2 (SAP1302)</div>
+                    </div>
+                    <div class="sdg-card-body">
+                        <h3>Climate Change Measures</h3>
+                        <p>As a proactive policy planning measure, AI defect detection drastically cuts the carbon emissions associated with scrapping and reproducing faulty electronic components.</p>
+                    </div>
+                </div>
+
+                <!-- Target 9.5 / SAP0905 -->
+                <div class="sdg-target-card sdg-9 glass-panel">
+                    <div class="sdg-card-header">
+                        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" alt="SDG 9 Industry & Innovation" class="sdg-icon-small">
+                        <div class="sdg-badge badge-9">Target 9.5 (SAP0905)</div>
+                    </div>
+                    <div class="sdg-card-body">
+                        <h3>Upgrade Industrial Tech</h3>
+                        <p>Directly upgrading the technological capabilities of industrial sectors by transitioning from rudimentary manual optical checks to state-of-the-art AI-driven automated inspection.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Impact Metrics (Retained) -->
+            <div class="impact-metrics-row mt-4" style="margin-top: 3rem;">
+                <div class="metric-card glass-panel">
+                    <div class="metric-icon eco-icon">♻️</div>
+                    <div class="metric-content">
+                        <div class="counter-wrap text-green"><span class="counter" data-target="85">0</span><span class="unit">%</span></div>
+                        <strong>Waste Reduced</strong>
+                    </div>
+                </div>
+                
+                <div class="metric-card glass-panel">
+                    <div class="metric-icon energy-icon">⚡</div>
+                    <div class="metric-content">
+                        <div class="counter-wrap text-cyan"><span class="counter" data-target="1500">0</span><span class="unit">kWh</span></div>
+                        <strong>Energy Saved Daily</strong>
+                    </div>
+                </div>
+                
+                <div class="metric-card glass-panel">
+                    <div class="metric-icon co2-icon">🌍</div>
+                    <div class="metric-content">
+                        <div class="counter-wrap text-blue"><span class="counter" data-target="45">0</span><span class="unit">Tons</span></div>
+                        <strong>Carbon Footprint Reduced</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Global Loading State -->
+    <div class="global-loading hidden" id="loadingOverlay">
+        <div class="cyber-spinner"></div>
+        <h2>NEURAL NET ACTIVE</h2>
+        <p>Scanning matrix for micro-defects...</p>
+        <div class="progress-bar-container"><div class="progress-bar"></div></div>
+    </div>
+
+    <!-- Interactive Story Modal -->
+    <div class="modal hidden" id="storyModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content glass-panel">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" id="prevSlide">❮</button>
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Slides injected via JS -->
+                    </div>
+                </div>
+                <button class="carousel-btn next-btn" id="nextSlide">❯</button>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div class="error-toast hidden" id="errorToast">
+        <span>⚠ Unable to analyze image. Please try again.</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

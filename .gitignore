@@ -1,0 +1,25 @@
+# Environments
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# IDEs
+.vscode/
+.idea/
+
+# Large Datasets
+/dataset/
+/PCB_USED/
+/images/
+/rotation/
+/Annotations/
+
+# Model backups (only keep the main best.pt, ignore others)
+*.pt
+!runs/detect/pcb_defect_detection4/weights/best.pt
+runs/detect/*/weights/last.pt
+
+# Ignore hidden files
+.DS_Store

@@ -1,0 +1,41 @@
+[33mcommit 22aeadd169c35440ae1e97a59af2ff263fbc484d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Vengateshan TS <vengateshants@gmail.com>
+Date:   Sat May 16 12:30:27 2026 +0530
+
+    Add live Railway demo link to README
+
+[33mcommit 27504fcf64cb42441fc34ed370135a4655cac6a1[m
+Author: SenthuranathanS <srisenroopa1979@gmail.com>
+Date:   Sat May 16 12:20:58 2026 +0530
+
+    Enhance README with professional profile layout and visuals
+
+[33mcommit 7b2ba2adaaea36007942794400aa3565dbe9401f[m
+Author: SenthuranathanS <srisenroopa1979@gmail.com>
+Date:   Sat May 16 12:19:37 2026 +0530
+
+    Update .gitignore for images
+
+[33mcommit 1ef2dc5047080c1a9e22f3392ba8afee2396e493[m
+Author: SenthuranathanS <srisenroopa1979@gmail.com>
+Date:   Sat May 16 12:16:17 2026 +0530
+
+    Optimize UI/UX for mobile devices
+
+[33mcommit 2c1486814565eb390d5d5f7a70e7c82eabde4e1f[m
+Author: SenthuranathanS <srisenroopa1979@gmail.com>
+Date:   Sat May 16 12:11:28 2026 +0530
+
+    Add missing static UI images
+
+[33mcommit 6fec1bdf2d48505bc9c03b9ec1d17a1dc1509475[m
+Author: SenthuranathanS <srisenroopa1979@gmail.com>
+Date:   Sat May 16 11:59:03 2026 +0530
+
+    Fix Dockerfile libgl1 dependency for Debian Trixie
+
+[33mcommit d1bdee24e03eefe46ac50b7f4db2993f0d8c8338[m
+Author: SenthuranathanS <srisenroopa1979@gmail.com>
+Date:   Sat May 16 11:50:33 2026 +0530
+
+    Initial commit ready for deployment
